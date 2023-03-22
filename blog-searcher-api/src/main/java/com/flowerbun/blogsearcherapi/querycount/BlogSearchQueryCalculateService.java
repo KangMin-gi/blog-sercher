@@ -24,9 +24,8 @@ public class BlogSearchQueryCalculateService {
             existQueryCount.addCount();
             return;
         }
+
+        this.countRepo.save(searchQueryCounting.toEntity()); //
         querySet.add(query);
-        synchronized (this) {
-            this.countRepo.save(searchQueryCounting.toEntity());
-        }
     }
 }
