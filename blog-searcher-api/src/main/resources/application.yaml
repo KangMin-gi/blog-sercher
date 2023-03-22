@@ -19,6 +19,7 @@ spring:
       test:
         - h2
         - test
+    active: local
 
 ---
 spring:
