@@ -16,17 +16,16 @@
 
 ---
 ### System Spec
- 0. Spec
+ 1. Spec
      - Java 17
      - Spring Boot 3.0
      - gradle
  1. 패키징 된 파일은 간단하게 실행이 가능해야 한다
     - java -jar ${FILENAME}.jar 로 실행
     - 이를 위해, db 는 in-memory db 사용
- 2. 멀티 모듈로 구성
+ 1. 멀티 모듈로 구성
     - 모듈간 의존성 최소화
- 3. 대용량 트래픽을 전제로 구성
- 4. 비즈니스 로직은 Test 최대한
-
+ 1. 대용량 트래픽을 전제로 구성
+ 1. 비즈니스 로직은 Test 최대한
 
 ---

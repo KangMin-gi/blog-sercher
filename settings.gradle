@@ -1,0 +1,4 @@
+rootProject.name = 'blog-searcher-root'
+
+include 'blog-searcher-api'
+include 'blog-searcher-external'

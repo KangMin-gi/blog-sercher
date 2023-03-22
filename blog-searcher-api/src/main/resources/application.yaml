@@ -1,0 +1,62 @@
+
+spring:
+  config:
+    location: classpath:db/h2/h2.yaml
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        show_sql: false
+  profiles:
+    group:
+      local:
+        - h2
+        - local
+      test:
+        - h2
+        - test
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  sql:
+    init:
+      mode: embedded
+      schema-locations: classpath:db/h2/schema.sql
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+infra:
+  kakao:
+    api-key: 552ec45ba7cdd245004d9f9a6088dd4f
+
+profile:
+  env: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/h2/schema.sql
+      data-locations: classpath:db/h2/data.sql
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+infra:
+  kakao:
+    api-key: 552ec45ba7cdd245004d9f9a6088dd4f
+
+profile:
+  env: test
